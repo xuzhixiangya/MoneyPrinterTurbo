@@ -1,0 +1,53 @@
+{
+  "name": "dsh-plugin-moneyprinter",
+  "version": "1.0.0",
+  "description": "在 DeepSeek Harness 侧边栏里根据主题生成短视频",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dsh/host.js",
+  "exports": {
+    ".": "./dsh/host.js",
+    "./client": "./dsh/client.js",
+    "./locale/*.json": "./dsh/locale/*.json",
+    "./icon": "./dsh/icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "app",
+    "dsh",
+    "resource",
+    "cli.py",
+    "config.example.toml",
+    "cordis.patch.yml",
+    "main.py",
+    "pyproject.toml",
+    "requirements.txt",
+    "uv.lock",
+    "LICENSE",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuzhixiangya/MoneyPrinterTurbo.git"
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "scripts": {
+    "test": "node --test dsh/host.test.js"
+  }
+}

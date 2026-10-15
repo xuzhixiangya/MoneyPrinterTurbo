@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Generate video",
+    "description": "Generate a short video from a topic in the sidebar. The entry appears after installation and leaves after removal."
+  }
+}
